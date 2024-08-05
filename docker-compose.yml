@@ -1,0 +1,6 @@
+﻿services:
+  lockerease:
+    image: lockerease
+    build:
+      context: .
+      dockerfile: LockerEase/Dockerfile
