@@ -10,22 +10,52 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="05c8aace-3ad9-4b62-a372-cfc9bbee66d6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/LockerEase/Controllers/AuthController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LockerEase/Views/Auth/ConfirmEmail.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LockerEase/Views/Auth/Index.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LockerEase/Views/Auth/Reset.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.LockerEase/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LockerEase/.idea/projectSettingsUpdater.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LockerEase/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LockerEase/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LockerEase/Contracts/Services/IUserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LockerEase/Contracts/Services/IUserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LockerEase/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LockerEase/Controllers/UserController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LockerEase/Data/ApplicationDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LockerEase/Data/ApplicationDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LockerEase/LockerEase.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/LockerEase/LockerEase.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LockerEase/Models/UserModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LockerEase/Models/UserModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LockerEase/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LockerEase/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LockerEase/Services/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LockerEase/Services/UserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LockerEase/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/LockerEase/Views/Shared/_Layout.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LockerEase/Views/Shared/_Layout.cshtml.css" beforeDir="false" afterPath="$PROJECT_DIR$/LockerEase/Views/Shared/_Layout.cshtml.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LockerEase/Views/User/Edit.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/LockerEase/Views/User/Edit.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LockerEase/Views/User/Register.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/LockerEase/Views/User/Register.cshtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DpaMonitoringSettings">
+    <option name="autoShow" value="false" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/andallves/LockerEase.git",
-    "accountId": "c85e9f22-6b9c-4669-979e-4901efccbee1"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;andallves&quot;
   }
-}]]></component>
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:andallves/LockerEase.git&quot;,
+    &quot;accountId&quot;: &quot;aefef813-7c9e-4fb8-bd7e-3fa9e4e241d4&quot;
+  }
+}</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock://C:/Users/Andre/Documents/projects/poo/LockerEase/LockerEase/Data/ApplicationDbContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Andre/Documents/projects/poo/LockerEase/LockerEase/Views/Shared/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Andre/Documents/projects/poo/LockerEase/LockerEase/Views/Shared/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
@@ -40,30 +70,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.LockerEase: IIS Express.executor": "Run",
-    ".NET Launch Settings Profile.LockerEase: https.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "RiderIisExpressOptionsPageId",
-    "vue.rearranger.settings.migration": "true"
-  },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\andal\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\andal\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\andal\\AppData\\Local\\Symbols\\src"
-    ]
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.LockerEase: IIS Express.executor&quot;: &quot;Run&quot;,
+    &quot;.NET Launch Settings Profile.LockerEase: https.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;development&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Andre/Documents/projects/poo/LockerEase&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.LockerEase: https">
     <configuration name="LockerEase: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/LockerEase/LockerEase.csproj" />
@@ -165,6 +189,11 @@
       <updated>1722881023268</updated>
       <workItem from="1722881024965" duration="2442000" />
       <workItem from="1722883610182" duration="331000" />
+      <workItem from="1724627175239" duration="309000" />
+      <workItem from="1724676019263" duration="14000" />
+      <workItem from="1724729521702" duration="3723000" />
+      <workItem from="1724775058038" duration="38000" />
+      <workItem from="1725198841596" duration="7017000" />
     </task>
     <task id="LOCAL-00001" summary="feat: inicial commit">
       <option name="closed" value="true" />
@@ -191,9 +220,11 @@
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
+    <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="feat: inicial commit" />
     <MESSAGE value="feat: adicionando config" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: adicionando config" />
+    <MESSAGE value="feat: criando registro de usuário" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: criando registro de usuário" />
   </component>
 </project>

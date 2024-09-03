@@ -1,10 +1,12 @@
 ﻿namespace LockerEase.Models;
 
-public class UsuarioModel
+public class UserModel
 {
-    public string Nome { get; set; }
-    public string Telefone { get; set; }
+    public string Id { get; set; }
+    public string Name { get; set; }
+    public string PhoneNumber { get; set; }
     public string Email { get; set; }
-    public string Senha { get; set; }
+    public string Password { get; set; }
     public bool isActive { get; set; }
+    public string? ProfilePictureUrl { get; set; }
 }

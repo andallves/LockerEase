@@ -1,6 +1,12 @@
-﻿namespace LockerEase.Data;
+﻿using LockerEase.Models;
+using Microsoft.EntityFrameworkCore;
 
-public class ApplicationDbContext
+namespace LockerEase.Data;
+
+public class ApplicationDbContext : DbContext
 {
+    public ApplicationDbContext(DbContextOptions<ApplicationDbContext>
+        options) : base(options){}
     
+    public DbSet<UserModel> Users { get; set; }
 }
