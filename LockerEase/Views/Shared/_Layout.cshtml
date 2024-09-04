@@ -1,37 +1,62 @@
 ﻿@inject IHttpContextAccessor HttpContextAccessor
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-Br">
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>@ViewData["Title"] - LockerEase</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="_Layout.cshtml.css" asp-append-version="true"/>
+    <style>
+        a.nav-link.active {
+            position: relative;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+        }
+        
+        a.nav-link.active::after {
+            position: absolute;
+            bottom: 0;
+            left: 6px;
+            content: "";
+            width: 90%;
+            height: 1px;
+            background: white;
+        }
+    </style>
 </head>
-<body>
+<body class="bg-light bg-gradient">
 <header>
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm bg-success bg-gradient border-bottom box-shadow mb-3">
         <div class="container-fluid mx-5">
-            <a class="navbar-brand fs-4 fw-bold" asp-area="" asp-controller="Home" asp-action="Index">LockerEase</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+            <a class="navbar-brand fs-4 fw-bold text-light" asp-area="" asp-controller="Home" asp-action="Index">LockerEase</a>
+            <button class="navbar-toggler" type="button" 
+                    data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                <ul class="navbar-nav justify-content-end flex-grow-1">
+                <ul class="navbar-nav justify-content-end flex-grow-1 gap-3">
                     <li class="nav-item">
-                        <a 
-                            class="nav-link text-dark @GetActiveClass("/home")" 
-                            aria-current="page" asp-area="" 
-                            asp-controller="Home" asp-action="Index">Página Inicial</a>
+                        <a class="nav-link @GetActiveClass("Home", "Index")"
+                           aria-current="page" 
+                           asp-area="" 
+                           asp-controller="Home" 
+                           asp-action="Index">Página Inicial</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark @GetActiveClass("/auth")" asp-area=""
-                           asp-controller="Auth" asp-action="Index">Entrar</a>
+                        <a class="nav-link @GetActiveClass("Auth", "Index")"
+                           asp-area=""
+                           asp-controller="Auth" 
+                           asp-action="Index">Entrar</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark @GetActiveClass("/user/register")" asp-area=""
+                        <a class="nav-link @GetActiveClass("User", "Register")"
+                           asp-area=""
                            asp-controller="User"
                            asp-action="Register">Cadastre-se</a>
                     </li>
@@ -47,21 +72,28 @@
 </div>
 
 <footer class="border-top footer text-muted">
-    <div class="container text-center">
+    <div class="container text-center mt-4">
         LockerEase. Todos os direitos reservados &copy; 2024
     </div>
 </footer>
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="~/js/site.js" asp-append-version="true"></script>
+<script src="/js/editModal.js"></script>
 @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
 
 @functions {
-    private string GetActiveClass(string page)
+    public string GetActiveClass(string controller, string action)
     {
-        var relativePath = HttpContextAccessor.HttpContext.Request.Path.Value;
-        return relativePath.StartsWith(page, StringComparison.OrdinalIgnoreCase) ? "active" : "";
+        var routeData = HttpContextAccessor.HttpContext?.GetRouteData();
+        var currentController = routeData?.Values["controller"]?.ToString();
+        var currentAction = routeData?.Values["action"]?.ToString();
+        
+        return controller.Equals(currentController, StringComparison.OrdinalIgnoreCase) &&
+        action.Equals(currentAction, StringComparison.OrdinalIgnoreCase)
+        ? "active"
+        : "text-light";
     }
 }
