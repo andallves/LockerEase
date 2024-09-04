@@ -6,7 +6,7 @@ public interface IUserService
 {
     Task<UserModel> Register(UserModel user);
     Task<UserModel> Edit(string id, UserModel user);
-    UserModel GetUserById(string id);
+    Task<UserModel?> GetUserById(int id);
     UserModel GetUserByEmail(string email);
     Task<List<UserModel>> GetUsers();
     Task<UserModel> Enable(string id);

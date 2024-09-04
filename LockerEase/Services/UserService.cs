@@ -1,20 +1,22 @@
-﻿using LockerEase.Contracts.Services;
+﻿using LockerEase.Contracts.Repositories;
+using LockerEase.Contracts.Services;
 using LockerEase.Data;
 using LockerEase.Models;
+using LockerEase.Notifications;
 
 namespace LockerEase.Services;
 
 public class UserService : IUserService
 {
-    private readonly ApplicationDbContext _context;
+    private readonly IUserRepository _userRepository;
 
-    public UserService(ApplicationDbContext context)
+    public UserService(IUserRepository userRepository)
     {
-        _context = context;
+        _userRepository = userRepository;
     }
-    public Task<UserModel> Register(UserModel user)
+    public async Task<UserModel> Register(UserModel user)
     {
-        throw new NotImplementedException();
+        return _userRepository.Register(user);
     }
 
     public Task<UserModel> Edit(string id, UserModel user)
@@ -22,9 +24,9 @@ public class UserService : IUserService
         throw new NotImplementedException();
     }
 
-    public UserModel GetUserById(string id)
+    public async Task<UserModel?> GetUserById(int id)
     {
-        throw new NotImplementedException();
+        return await _userRepository.GetUserById(id);
     }
 
     public UserModel GetUserByEmail(string email)

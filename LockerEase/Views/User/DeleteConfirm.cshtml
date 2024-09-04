@@ -1,0 +1,16 @@
+﻿@model dynamic
+
+@{
+    ViewData["Title"] = "Confirmação de Apagar";
+}
+
+<div>
+    <h3>Realmente deseja excluir sua conta? </h3>
+    <span>Todos os seus dados serão deletados e não será possível 
+        recuperar-los posteriormente.</span>
+</div>
+
+<a role="button" class="btn btn-outline-warning" asp-controller="User" 
+   asp-action="Index">Cancelar</a>
+<a role="button" class="btn btn-outline-danger" 
+   asp-controller="User" asp-action="Delete">Confirmar</a>

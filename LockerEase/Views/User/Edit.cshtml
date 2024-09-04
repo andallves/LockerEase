@@ -1,2 +1,155 @@
 ﻿@model UserModel;
 
+@{
+    ViewData["Title"] = "Editar Perfil";
+}
+    
+@* <div class="modal" tabindex="-1" id="editModal"> *@
+@*     <div class="modal-dialog"> *@
+@*         <div class="modal-content"> *@
+@*             <div class="modal-header"> *@
+@*                 <h5 class="modal-title">Modal title</h5> *@
+@*                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> *@
+@*             </div> *@
+@* *@
+@*             <form class="col-md-6 d-flex flex-column needs-validation"> *@
+@*                 <div class="col-md-12    "> *@
+@*                     <label for="name" class="form-label">Nome</label> *@
+@*                     <input type="text" class="form-control" id="name" value="@Model.Name"  *@
+@*                            required> *@
+@*                     <div class="valid-feedback"> *@
+@*                         Looks good! *@
+@*                     </div> *@
+@*                 </div> *@
+@*                 <div class="col-md-12"> *@
+@*                     <label for="lastname" class="form-label">Sobrenome</label> *@
+@*                     <input type="text" class="form-control" id="lastname" value="Otto" required> *@
+@*                     <div class="valid-feedback"> *@
+@*                         Looks good! *@
+@*                     </div> *@
+@*                 </div> *@
+@*                 <div class="col-md-12"> *@
+@*                     <label for="validationCustomUsername" class="form-label">Usuário</label> *@
+@*                     <div class="input-group has-validation"> *@
+@*                         <span class="input-group-text" id="inputGroupPrepend"></span> *@
+@*                         <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required> *@
+@*                         <div class="invalid-feedback"> *@
+@*                             Please choose a username. *@
+@*                         </div> *@
+@*                     </div> *@
+@*                 </div> *@
+@*                 <div class="col-md-12"> *@
+@*                     <label for="validationCustom03" class="form-label">Email</label> *@
+@*                     <input type="text" class="form-control" id="validationCustom03" required> *@
+@*                     <div class="invalid-feedback"> *@
+@*                         Please provide a valid city. *@
+@*                     </div> *@
+@*                 </div> *@
+@*                 <div class="col-md-12"> *@
+@*                     <label for="validationCustom04" class="form-label">Senha</label> *@
+@*                     <select class="form-select" id="validationCustom04" required> *@
+@*                         <option selected disabled value="">Choose...</option> *@
+@*                         <option>...</option> *@
+@*                     </select> *@
+@*                     <div class="invalid-feedback"> *@
+@*                         Please select a valid state. *@
+@*                     </div> *@
+@*                 </div> *@
+@*                 <div class="col-md-12"> *@
+@*                     <label for="validationCustom05" class="form-label">Confirmar Senha</label> *@
+@*                     <input type="text" class="form-control" id="validationCustom05" required> *@
+@*                     <div class="invalid-feedback"> *@
+@*                         Please provide a valid zip. *@
+@*                     </div> *@
+@*                 </div> *@
+@*                 *@
+@*                 <div class="col-12 d-grid"> *@
+@*                     <button class="btn btn-outline-info" type="submit">Cadastrar</button> *@
+@*                 </div> *@
+@*             </form> *@
+@*             <div class="modal-body"> *@
+@*                 <p>Modal body text goes here.</p> *@
+@*             </div> *@
+@*             <div class="modal-footer"> *@
+@*                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> *@
+@*                 <button type="button" class="btn btn-primary">Save changes</button> *@
+@*             </div> *@
+@*         </div> *@
+@*     </div> *@
+@* </div> *@
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    Launch static backdrop modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="col-md-6 d-flex flex-column needs-validation">
+                    <div class="col-md-12    ">
+                        <label for="name" class="form-label">Nome</label>
+                        <input type="text" class="form-control" id="name" value="@Model.Name"
+                               required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="lastname" class="form-label">Sobrenome</label>
+                        <input type="text" class="form-control" id="lastname" value="Otto" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="validationCustomUsername" class="form-label">Usuário</label>
+                        <div class="input-group has-validation">
+                            <span class="input-group-text" id="inputGroupPrepend"></span>
+                            <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+                            <div class="invalid-feedback">
+                                Please choose a username.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="validationCustom03" class="form-label">Email</label>
+                        <input type="text" class="form-control" id="validationCustom03" required>
+                        <div class="invalid-feedback">
+                            Please provide a valid city.
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="validationCustom04" class="form-label">Senha</label>
+                        <select class="form-select" id="validationCustom04" required>
+                            <option selected disabled value="">Choose...</option>
+                            <option>...</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Please select a valid state.
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="validationCustom05" class="form-label">Confirmar Senha</label>
+                        <input type="text" class="form-control" id="validationCustom05" required>
+                        <div class="invalid-feedback">
+                            Please provide a valid zip.
+                        </div>
+                    </div>
+
+                    <div class="col-12 d-grid">
+                        <button class="btn btn-outline-info" type="submit">Cadastrar</button>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Understood</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,8 +1,30 @@
+using LockerEase.Contracts.Repositories;
+using LockerEase.Contracts.Services;
+using LockerEase.Data;
+using LockerEase.Repositories;
+using LockerEase.Services;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
+builder
+    .Services
+    .AddDbContext<ApplicationDbContext>(options => options.UseMySql(
+    builder.Configuration.GetConnectionString("DefaultConnection"),
+    new MySqlServerVersion(new Version(8, 0, 39))));
+
+builder
+    .Services
+    .AddScoped<IUserRepository, UserRepository>()
+    .AddScoped<IUserService, UserService>();
 // Add services to the container.
-builder.Services.AddControllersWithViews();
-builder.Services.AddHttpContextAccessor();
+builder
+    .Services
+    .AddControllersWithViews();
+
+builder
+    .Services
+    .AddHttpContextAccessor();
 
 var app = builder.Build();
 
