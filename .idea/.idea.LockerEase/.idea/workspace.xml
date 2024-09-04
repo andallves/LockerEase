@@ -9,12 +9,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="05c8aace-3ad9-4b62-a372-cfc9bbee66d6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/LockerEase/Controllers/AuthController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LockerEase/Views/Auth/ConfirmEmail.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LockerEase/Views/Auth/Index.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LockerEase/Views/Auth/Reset.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.LockerEase/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LockerEase/.idea/projectSettingsUpdater.xml" afterDir="false" />
+    <list default="true" id="05c8aace-3ad9-4b62-a372-cfc9bbee66d6" name="Changes" comment="feat: ajustando o layout">
+      <change afterPath="$PROJECT_DIR$/LockerEase/Contracts/Repositories/IUserRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LockerEase/Controllers/BaseController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LockerEase/Notifications/INotificator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LockerEase/Notifications/Notificator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LockerEase/Repositories/UserRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LockerEase/Responses/BadRequestResponse.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LockerEase/Responses/DevelopmentExeceptionResponse.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LockerEase/Responses/ExceptionResponse.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LockerEase/Responses/Response.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LockerEase/Views/User/DeleteConfirm.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LockerEase/wwwroot/js/editModal.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LockerEase/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LockerEase/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LockerEase/Contracts/Services/IUserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LockerEase/Contracts/Services/IUserService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LockerEase/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LockerEase/Controllers/UserController.cs" afterDir="false" />
@@ -23,10 +29,10 @@
       <change beforePath="$PROJECT_DIR$/LockerEase/Models/UserModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LockerEase/Models/UserModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LockerEase/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LockerEase/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LockerEase/Services/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LockerEase/Services/UserService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LockerEase/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/LockerEase/Views/Shared/_Layout.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LockerEase/Views/Shared/_Layout.cshtml.css" beforeDir="false" afterPath="$PROJECT_DIR$/LockerEase/Views/Shared/_Layout.cshtml.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LockerEase/Views/User/Edit.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/LockerEase/Views/User/Edit.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LockerEase/Views/User/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/LockerEase/Views/User/Index.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LockerEase/Views/User/Register.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/LockerEase/Views/User/Register.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LockerEase/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/LockerEase/appsettings.Development.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,9 +58,7 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://C:/Users/Andre/Documents/projects/poo/LockerEase/LockerEase/Data/ApplicationDbContext.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Andre/Documents/projects/poo/LockerEase/LockerEase/Views/Shared/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Andre/Documents/projects/poo/LockerEase/LockerEase/Views/Shared/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1b7d7cb6609f8d85f36dfd4df6123c8060f4fd5e1699c5f959de6e918d7351/RazorPageOfT.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
@@ -76,7 +80,7 @@
     &quot;.NET Launch Settings Profile.LockerEase: https.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;development&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/tela-de-cadastro&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Andre/Documents/projects/poo/LockerEase&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -84,10 +88,22 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
   }
 }</component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SwaggerCodegen" />
+      </set>
+    </option>
+  </component>
   <component name="RunManager" selected=".NET Launch Settings Profile.LockerEase: https">
     <configuration name="LockerEase: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/LockerEase/LockerEase.csproj" />
@@ -194,6 +210,10 @@
       <workItem from="1724729521702" duration="3723000" />
       <workItem from="1724775058038" duration="38000" />
       <workItem from="1725198841596" duration="7017000" />
+      <workItem from="1725388144677" duration="9279000" />
+      <workItem from="1725397870666" duration="2076000" />
+      <workItem from="1725400011707" duration="19650000" />
+      <workItem from="1725452712474" duration="8604000" />
     </task>
     <task id="LOCAL-00001" summary="feat: inicial commit">
       <option name="closed" value="true" />
@@ -211,7 +231,23 @@
       <option name="project" value="LOCAL" />
       <updated>1722881831530</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="feat: estrutura inicial">
+      <option name="closed" value="true" />
+      <created>1725393069687</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1725393069687</updated>
+    </task>
+    <task id="LOCAL-00004" summary="feat: ajustando o layout">
+      <option name="closed" value="true" />
+      <created>1725461312774</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1725461312774</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,6 +261,8 @@
     <MESSAGE value="feat: inicial commit" />
     <MESSAGE value="feat: adicionando config" />
     <MESSAGE value="feat: criando registro de usuário" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: criando registro de usuário" />
+    <MESSAGE value="feat: estrutura inicial" />
+    <MESSAGE value="feat: ajustando o layout" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: ajustando o layout" />
   </component>
 </project>
