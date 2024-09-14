@@ -17,14 +17,12 @@ public class UserController : Controller
     {
 
         var userProfile = await _userService.GetUserById(1);
-
-        // Verifica se o usuário foi encontrado
+        
         if (userProfile == null)
         {
-            return NotFound(); // Retorna uma resposta 404 se o usuário não for encontrado
+            return NotFound();
         }
-
-        // Retorna a View com o modelo de dados
+        
         return View(userProfile);
        
     }
@@ -32,6 +30,13 @@ public class UserController : Controller
     public IActionResult Register()
     {
         return View();
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> Register(UserModel user)
+    {
+        await _userService.Register(user);
+        return RedirectToAction("Index", "Auth");
     }
     
     public IActionResult Edit()
@@ -42,12 +47,5 @@ public class UserController : Controller
     public IActionResult DeleteConfirm()
     {
         return View();
-    }
-
-    [HttpPost]
-    public async Task<IActionResult> Register(UserModel user)
-    {
-        await _userService.Register(user);
-        return RedirectToAction("Index", "Auth");
     }
 }
