@@ -21,9 +21,11 @@
     </div>
     
     <div class="col-6 d-flex align-items-center py-4">
-        <form class="col-10 d-flex pb-4 flex-column align-items-center 
+        <form 
+            class="col-10 d-flex pb-4 flex-column align-items-center 
         justify-content-center gap-2 bg-white needs-validation rounded-3 
-        shadow-lg py-2"
+        shadow-lg py-2" 
+            novalidate
               asp-controller="User" asp-action="Register" method="post">
             <div class="col-10 border-bottom py-2 text-center">
                 <span class="fs-4 text-secondary">Criar uma nova 
@@ -55,7 +57,7 @@
             </div>
             <div class="col-md-10">
                 <label for="course" class="form-label">Curso</label>
-                <input type="text" class="form-control" id="course"
+                <input type="text" asp-for="Curso" class="form-control" id="course"
                        placeholder="Informe o seu curso" required>
                 <div class="invalid-feedback">
                     Please select a valid state.
