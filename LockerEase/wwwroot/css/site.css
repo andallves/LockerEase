@@ -19,4 +19,61 @@ html {
 
 body {
   margin-bottom: 60px;
+  font-family: Roboto, sans-serif;
+}
+
+.bg-green-700 {
+    background: #1b512d;
+}
+
+.bg-green-600 {
+    background: #1c7c54;
+}
+
+.bg-green-500 {
+    background: #73e2a7;
+}
+
+.bg-green-400 {
+    background: #b1cf5f;
+}
+
+.bg-green-300 {
+    background: #def4c6;
+}
+
+.text-green-700 {
+    color: #1b512d;
+}
+
+.text-green-600 {
+    color: #1c7c54;
+}
+
+.text-green-500 {
+    color: #73e2a7;
+}
+
+.text-green-400 {
+    color: #b1cf5f;
+}
+
+.text-green-300 {
+    color: #def4c6;
+}
+
+.text-black {
+    color: #001a23;
+}
+
+.text-gray {
+    color: #daddd8;
+}
+
+.text-white {
+    color: #fff;
+}
+
+.search-button:hover svg {
+    fill: #ffffff;
 }

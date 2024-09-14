@@ -4,3 +4,216 @@
 <h1>@ViewData["Title"]</h1>
 
 <p>Use this page to detail your site's privacy policy.</p>
+<article class="d-flex flex-column justify-content-center mx-auto my-5 gap-5 bg-white p-3" style="width: 70%;">
+    <div class="d-flex h-50 w-auto gap-3">
+        <div class="w-70 h-70 p-2 bg-green-300 rounded">
+            <img class="w-auto" src="assets/locker-icon.svg" alt="test" style="width: 70px; height: 70px;">
+        </div>
+        <div class="w-100 d-flex flex-column align-items-start justify-content-center">
+            <h2 class="fw-7">Armários Disponíveis</h2>
+            <span>Encontre e solicite os armários disponíveis conforme suas necessidades</span>
+        </div>
+    </div>
+
+</article>
+<div>
+    <form class="d-flex justify-content-start align-items-end gap-3">
+        <div class="d-flex flex-column w-50">
+            <label for="filterInput" class="form-label text-black fs-4 fw-semibold">Bloco</label>
+            <select class="form-select w-100" id="filterInput" aria-label="Large select example">
+                <option selected>Selecione um bloco</option>
+                <option value="1">Bloco 1</option>
+                <option value="2">Bloco 2</option>
+                <option value="3">Bloco 3</option>
+            </select>
+        </div>
+        <button class="btn btn-outline-success search-button" type="submit">
+            <svg class="icon-link icon-link-hover" fill="#1c7c54" style="--bs-icon-link-hover-fill: white;" height="20px" width="20px" version="1.1" id="XMLID_305_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" xml:space="preserve">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+                <g id="SVGRepo_iconCarrier"> <g id="search"> <path d="M22.3,23.7l-6.8-6.8c-1.6,1.3-3.7,2.1-6,2.1C4.3,19,0,14.7,0,9.5S4.3,0,9.5,0S19,4.3,19,9.5c0,2.3-0.8,4.3-2.1,6l6.8,6.8 L22.3,23.7z M9.5,2C5.4,2,2,5.4,2,9.5S5.4,17,9.5,17S17,13.6,17,9.5S13.6,2,9.5,2z"/> </g> </g>
+                        </svg>
+        </button>
+    </form>
+</div>
+<div class="row mx-auto my-auto">
+    <div id="carouselOfLockers" class="carousel slide w-auto" data-bs-ride="carousel" data-bs-intervalo="3000">
+        <div class="carousel-inner w-100">
+            <div class="card-group">
+                <div class="card carousel-item active" style="width: 200px; height: 250px; cursor: pointer;">
+                    <div style="width: 200px; height: 230px; overflow-y: hidden;">
+                        <img src="assets/locker3.jpg" class="card-img-top" style="width: 200px;" alt="...">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Armário 1</h5>
+                        <p class="card-text">Disponível</p>
+                    </div>
+                </div>
+
+                <div class="card carousel-item" style="width: 200px; height: 250px; cursor: pointer;">
+                    <div style="width: 200px; height: 230px; overflow-y: hidden;">
+                        <img src="assets/locker3.jpg" class="card-img-top" style="width: 200px;" alt="...">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Armário 2</h5>
+                        <p class="card-text">Disponível</p>
+                    </div>
+                </div>
+
+                <div class="card carousel-item" style="width: 200px; height: 250px; cursor: pointer;">
+                    <div style="width: 200px; height: 230px; overflow-y: hidden;">
+                        <img src="assets/locker3.jpg" class="card-img-top" style="width: 200px;" alt="...">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Armário 3</h5>
+                        <p class="card-text">Disponível</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev w-auto" type="button" data-bs-target="#carouselOfLockers" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon bg-dark border border-dark rounded-circle p-2" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next w-auto" type="button" data-bs-target="#carouselOfLockers" data-bs-slide="next">
+            <span class="carousel-control-next-icon bg-dark border border-dark rounded-circle p-2" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+<div id="carouselExampleCaptions" class="carousel carousel-dark slide" data-bs-ride="false">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div class="card-group">
+                <div class="card">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="carousel-item">
+            <div class="card-group">
+                <div class="card">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="carousel-item">
+
+
+            <div class="card-group">
+                <div class="card">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+<div class="d-flex flex-wrap gap-5">
+    <div class="card" style="width: 200px; height: 250px cursor: pointer;">
+        <div style="width: 200px; height: 230px; overflow-y: hidden;">
+            <img src="assets/locker3.jpg" class="card-img-top" style="width: 200px;" alt="...">
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Armário</h5>
+            <p class="card-text">Disponível</p>
+        </div>
+    </div>
+
+    <div class="card" style="width: 200px; height: 250px cursor: pointer;">
+        <div style="width: 200px; height: 230px; overflow-y: hidden;">
+            <img src="assets/locker3.jpg" class="card-img-top" style="width: 200px;" alt="...">
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Armário</h5>
+            <p class="card-text">Disponível</p>
+        </div>
+    </div>
+
+    <div class="card" style="width: 200px; height: 250px cursor: pointer;">
+        <div style="width: 200px; height: 230px; overflow-y: hidden;">
+            <img src="assets/locker3.jpg" class="card-img-top" style="width: 200px;" alt="...">
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Armário</h5>
+            <p class="card-text">Disponível</p>
+        </div>
+    </div>
+</div>

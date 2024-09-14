@@ -2,7 +2,144 @@
     ViewData["Title"] = "Página Inicial";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Bem vindo!</h1>
-    <p>Ao LockerEase seu sistema para garantir um armário.</p>
+<div class="w-auto d-flex flex-column border-0">
+    <header class="w-auto position-relative d-flex py-5 flex-column align-items-center justify-content-end"
+            style="height: 500px; overflow-y: hidden;">
+        <img src="assets/armariolockerease.png" alt="" class="position-absolute" style="width: 100%; height: 600px; top: -100px; left: 0; z-index: -1;">
+        <h1 class="text-white" style="text-shadow: 0 0 8px black; font-size: 42px; font-weight: 700">Bem vindo ao LockerEase</h1>
+        <p class="text-white" style="text-shadow: 0 0 4px black; font-size: 18px; font-weight: 500;">Uma maneira acessível de você encontrar seu armário.</p>
+        <div class="d-flex justify-content-center align-items-center p-5 m-1">
+            <button type="button" class="btn btn-success px-3 py-2 fw-bolder" >Vamos começar</button>
+        </div>
+    </header>
+    <section class="d-flex flex-column gap-5 my-4">
+        <article class="d-flex justify-content-between align-items-center mx-auto my-5 gap-5" style="width: 70%;">
+            <div>
+                <h2 class="fw-5">Notificações</h2>
+            </div>
+            <ul class="d-flex gap-4 flex-column">
+                <li class="d-flex gap-3 align-items-center pb-3" style="list-style: none; border-bottom: 1px solid #daddd8;">
+                    <div class="d-flex align-items-center justify-content-center p-2 bg-green-300" style="border-radius: 50%;">
+                        <img src="assets/bell.svg" alt="" style="width: 30px; height: 30px;">
+                    </div>
+                    <div class="d-flex flex-column justify-content-center">
+                        <p class="fs-14" style="font-size: 16px; font-weight: 500; color: black; margin: 0;">Vencimento de Empréstimo</p>
+                        <span class="fs-12" style="font-size: 13px; font-weight: 400; color: gray;">Aviso de armário reservado disponível</span>
+                    </div>
+                </li>
+                <li class="d-flex gap-3 align-items-center pb-3" style="list-style: none; border-bottom: 1px solid #daddd8;">
+                    <div class="d-flex align-items-center justify-content-center p-2 bg-green-300" style="border-radius: 50%;">
+                        <img src="assets/email.svg" alt="" style="width: 30px; height: 30px;">
+                    </div>
+                    <div class="d-flex flex-column justify-content-center">
+                        <p class="fs-14" style="font-size: 16px; font-weight: 500; color: black; margin: 0;">Disponibilidade de Armário</p>
+                        <span class="fs-12" style="font-size: 13px; font-weight: 400; color: gray;">Lembrete da data limite de devolução</span>
+                    </div>
+                </li>
+                <li class="d-flex gap-3 align-items-center pb-3" style="list-style: none; border-bottom: 1px solid #daddd8;">
+                    <div class="d-flex align-items-center justify-content-center p-2 bg-green-300" style="border-radius: 50%;">
+                        <img src="assets/warning.svg" alt="" style="width: 30px; height: 30px;">
+                    </div>
+                    <div class="d-flex flex-column justify-content-center">
+                        <p class="fs-14" style="font-size: 16px; font-weight: 500; color: black; margin: 0;">Alertas para Administradores</p>
+                        <span class="fs-12" style="font-size: 13px; font-weight: 400; color: gray;">Problemas em armário identificado</span>
+                    </div>
+                </li>
+            </ul>
+        </article>
+        <article class="d-flex justify-content-between mx-auto my-5" style="width: 70%;">
+            <div class="d-flex flex-column gap-5">
+                <div>
+                    <h2 class="fw-5">Avaliações de Usuários</h2>
+                    <span>Veja o que os usuários estão falando sobre nossos armários</span>
+                </div>
+            
+                <div class="d-flex flex-wrap gap-4">
+                    <div class="d-flex flex-column gap-2 bg-green-300 box-shadow p-3 rounded rounded-md" style="width: 200px; height: 100px;" >
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex gap-2 align-items-center">
+                                <div class="bg-secondary" style="border-radius: 50%; overflow: hidden;">
+                                    <img src="assets/perfil.png" alt="" width="28" height="28" style="border-radius: 50;">
+                                </div>
+                                <span class="text-dark fs-6 fw-semibold">Usuário 1</span>
+                            </div>
+                            <div class="d-flex justify-content-around">
+                                <img src="assets/star.svg" alt="" width="10" height="10">
+                                <img src="assets/star.svg" alt="" width="10" height="10">
+                                <img src="assets/star.svg" alt="" width="10" height="10">
+                                <img src="assets/star.svg" alt="" width="10" height="10">
+                                <img src="assets/star.svg" alt="" width="10" height="10">
+                            </div>
+                        </div>
+                        <div>
+                            <p>Descrição da avaliação</p>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column gap-2 bg-green-300 box-shadow p-3 rounded rounded-md" style="width: 200px; height: 100px;" >
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex gap-2 align-items-center">
+                                <div class="bg-secondary" style="border-radius: 50%; overflow: hidden;">
+                                    <img src="assets/perfil.png" alt="" width="28" height="28" style="border-radius: 50;">
+                                </div>
+                                <span class="text-dark fs-6 fw-medium">Usuário 1</span>
+                            </div>
+                            <div class="d-flex justify-content-around">
+                                <img src="assets/star.svg" alt="" width="10" height="10">
+                                <img src="assets/star.svg" alt="" width="10" height="10">
+                                <img src="assets/star.svg" alt="" width="10" height="10">
+                                <img src="assets/star.svg" alt="" width="10" height="10">
+                                <img src="assets/star.svg" alt="" width="10" height="10">
+                            </div>
+                        </div>
+                        <div>
+                            <p>Descrição da avaliação</p>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column gap-2 bg-green-300 box-shadow p-3 rounded rounded-md" style="width: 200px; height: 100px;" >
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex gap-2 align-items-center">
+                                <div class="bg-secondary" style="border-radius: 50%; overflow: hidden;">
+                                    <img src="assets/perfil.png" alt="" width="28" height="28" style="border-radius: 50;">
+                                </div>
+                                <span class="text-dark fs-6 fw-medium">Usuário 1</span>
+                            </div>
+                            <div class="d-flex justify-content-around">
+                                <img src="assets/star.svg" alt="" width="10" height="10">
+                                <img src="assets/star.svg" alt="" width="10" height="10">
+                                <img src="assets/star.svg" alt="" width="10" height="10">
+                                <img src="assets/star.svg" alt="" width="10" height="10">
+                                <img src="assets/star.svg" alt="" width="10" height="10">
+                            </div>
+                        </div>
+                        <div>
+                            <p>Descrição da avaliação</p>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column gap-2 bg-green-300 box-shadow p-3 rounded rounded-md" style="width: 200px; height: 100px;" >
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex gap-2 align-items-center">
+                                <div class="bg-secondary" style="border-radius: 50%; overflow: hidden;">
+                                    <img src="assets/perfil.png" alt="" width="28" height="28" style="border-radius: 50;">
+                                </div>
+                                <span class="text-dark fs-6 fw-medium">Usuário 1</span>
+                            </div>
+                            <div class="d-flex justify-content-around">
+                                <img src="assets/star.svg" alt="" width="10" height="10">
+                                <img src="assets/star.svg" alt="" width="10" height="10">
+                                <img src="assets/star.svg" alt="" width="10" height="10">
+                                <img src="assets/star.svg" alt="" width="10" height="10">
+                                <img src="assets/star.svg" alt="" width="10" height="10">
+                            </div>
+                        </div>
+                        <div>
+                            <p>Descrição da avaliação</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="width: 500px; height: 500px;">
+                <img src="assets/avaliacao-armario.jpg" alt="" style="width: 500px; height: 500px;">
+            </div>
+        </article>
+    </section>
 </div>
