@@ -14,9 +14,9 @@ public class UserService : IUserService
     {
         _userRepository = userRepository;
     }
-    public async Task<UserModel> Register(UserModel user)
+    public Task<UserModel> Register(UserModel user)
     {
-        return _userRepository.Register(user);
+        return Task.FromResult(_userRepository.Register(user));
     }
 
     public Task<UserModel> Edit(string id, UserModel user)

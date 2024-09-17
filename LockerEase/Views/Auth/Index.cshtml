@@ -1,6 +1,20 @@
-﻿@{
+﻿@model LoginModel
+@{
     ViewBag.Title = "title";
     Layout = "_Layout";
 }
 
-<h2>title</h2>
+<form asp-controller="Auth" asp-action="Enter" method="post">
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Login</label>
+        <input type="text" asp-for="Login" class="form-control" id="login">
+        @Html.ValidationMessageFor(x => x.Login)
+        
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" asp-for="Senha" class="form-control" id="exampleInputPassword1">
+        @Html.ValidationMessageFor(X => X.Senha)
+    <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
