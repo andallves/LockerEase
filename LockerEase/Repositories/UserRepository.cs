@@ -1,28 +1,22 @@
-﻿using LockerEase.Contracts.Repositories;
+﻿using LockerEase.Contracts;
 using LockerEase.Data;
 using LockerEase.Models;
+using LockerEase.Repositories.Contracts;
 using Microsoft.EntityFrameworkCore;
 
 namespace LockerEase.Repositories;
 
-public class UserRepository : IUserRepository
-{
-    private readonly ApplicationDbContext _context;
+public class UserRepository : Repository<UserModel>, IUserRepository
+{   
+    public UserRepository(ApplicationDbContext context) : base(context) {}
     
-    public UserRepository(ApplicationDbContext context)
+    public void Register(UserModel user)
     {
-        _context = context;
-    }
-    public UserModel Register(UserModel user)
-    {
-        _context.Users.Add(user);
-        _context.SaveChanges();
-        
-        return user;
+        Context.Users.Add(user);
     }
 
     public async Task<UserModel?> GetUserById(int id)
     {
-       return await _context.Users.FirstOrDefaultAsync(u => u.Id == id);
+       return await Context.Users.FirstOrDefaultAsync(u => u.Id == id);
     }
 }

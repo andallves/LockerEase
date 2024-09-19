@@ -1,8 +1,9 @@
-﻿namespace LockerEase.Models;
+﻿using LockerEase.Entities;
 
-public class UserModel
+namespace LockerEase.Models;
+
+public class UserModel : Entity
 {
-    public int Id { get; set; }
     public string Name { get; set; } = string.Empty;
     public string PhoneNumber { get; set; } = string.Empty;
     public string Curso { get; set; }

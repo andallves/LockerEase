@@ -1,22 +1,35 @@
-﻿using LockerEase.Contracts.Repositories;
-using LockerEase.Contracts.Services;
-using LockerEase.Data;
+﻿using LockerEase.Contracts.Services;
 using LockerEase.Models;
 using LockerEase.Notifications;
+using LockerEase.Repositories.Contracts;
+using Microsoft.AspNetCore.Identity;
 
 namespace LockerEase.Services;
 
-public class UserService : IUserService
+public class UserService : BaseService, IUserService
 {
     private readonly IUserRepository _userRepository;
+    private readonly IPasswordHasher<UserModel> _passwordHasher;
 
-    public UserService(IUserRepository userRepository)
+    public UserService(INotificator notificator, IPasswordHasher<UserModel> passwordHasher, IUserRepository userRepository) : base(notificator)
     {
         _userRepository = userRepository;
+        _passwordHasher = passwordHasher;
     }
-    public Task<UserModel> Register(UserModel user)
+    
+    
+    public async Task<UserModel> Register(UserModel user)
     {
-        return Task.FromResult(_userRepository.Register(user));
+        
+        user.Password = _passwordHasher.HashPassword(user, user.Password);
+        
+        _userRepository.Register(user);
+        if (await _userRepository.UnitOfWork.Commit())
+        {
+            return user;
+        }
+        return null;
+
     }
 
     public Task<UserModel> Edit(string id, UserModel user)
@@ -27,6 +40,7 @@ public class UserService : IUserService
     public async Task<UserModel?> GetUserById(int id)
     {
         return await _userRepository.GetUserById(id);
+
     }
 
     public UserModel GetUserByEmail(string email)
@@ -45,6 +59,11 @@ public class UserService : IUserService
     }
 
     public Task<UserModel> Disable(string id)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<UserModel> GetLocker(string id, LockerModel locker)
     {
         throw new NotImplementedException();
     }

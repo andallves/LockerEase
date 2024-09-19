@@ -1,4 +1,5 @@
-﻿using LockerEase.Contracts.Services;
+﻿using System.Diagnostics.CodeAnalysis;
+using LockerEase.Contracts.Services;
 using LockerEase.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -35,8 +36,13 @@ public class UserController : Controller
     [HttpPost]
     public async Task<IActionResult> Register(UserModel user)
     {
-        await _userService.Register(user);
-        return RedirectToAction("Index", "Auth");
+        var userSaved = await _userService.Register(user);
+        if (userSaved != null)
+        {
+            return RedirectToAction("Index", "Auth");
+        }
+
+        return null;
     }
     
     public IActionResult Edit()

@@ -1,32 +1,47 @@
-using LockerEase.Contracts.Repositories;
-using LockerEase.Contracts.Services;
-using LockerEase.Data;
+using System.Globalization;
+using System.Reflection;
 using LockerEase.Repositories;
 using LockerEase.Services;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Localization;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder
     .Services
-    .AddDbContext<ApplicationDbContext>(options => options.UseMySql(
-    builder.Configuration.GetConnectionString("DefaultConnection"),
-    new MySqlServerVersion(new Version(8, 0, 39))));
+    .Configure<RequestLocalizationOptions>(o =>
+    {
+        var supportedCultures = new[] { new CultureInfo("pt-BR") };
+        o.DefaultRequestCulture = new RequestCulture("pt-BR", "pt-BR");
+        o.SupportedCultures = supportedCultures;
+        o.SupportedUICultures = supportedCultures;
+    });
+
+builder
+    .Configuration
+    .SetBasePath(builder.Environment.ContentRootPath)
+    .AddJsonFile("appsettings.json", true, true)
+    .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", true, true)
+    .AddUserSecrets(Assembly.GetExecutingAssembly(), true, true)
+    .AddEnvironmentVariables();
 
 builder
     .Services
-    .AddScoped<IUserRepository, UserRepository>()
-    .AddScoped<IUserService, UserService>();
-// Add services to the container.
-builder
-    .Services
-    .AddControllersWithViews();
+    .ConfigureApplication(builder.Configuration);
 
 builder
     .Services
-    .AddHttpContextAccessor();
+    .AddServices();
 
 var app = builder.Build();
+
+var supportedCultures = new[] { new CultureInfo("pt-BR") };
+app.UseRequestLocalization(new RequestLocalizationOptions
+{
+    DefaultRequestCulture = new RequestCulture(culture: "pt-BR", uiCulture: "pt-BR"),
+    SupportedCultures = supportedCultures,
+    SupportedUICultures = supportedCultures
+});
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
