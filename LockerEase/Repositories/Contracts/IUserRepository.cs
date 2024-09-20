@@ -6,4 +6,5 @@ public interface IUserRepository : IRepository<UserModel>
 {
     void Register(UserModel user);
     Task<UserModel?> GetUserById(int id);
+    Task<UserModel?> GetUserByEmail(string email);
 }

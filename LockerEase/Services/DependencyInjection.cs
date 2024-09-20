@@ -5,14 +5,21 @@ using LockerEase.Models;
 using LockerEase.Notifications;
 using LockerEase.Repositories;
 using LockerEase.Repositories.Contracts;
+using LockerEase.Settings;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using NetDevPack.Security.Jwt.Core.Interfaces;
 using ScottBrady91.AspNetCore.Identity;
 
 namespace LockerEase.Services;
 
 public static class DependencyInjection
 {
+    public static void SetupSettings(this IServiceCollection service, IConfiguration configuration)
+    {
+        service.Configure<JwtSettings>(configuration.GetSection("JwtSettings"));
+    }
+    
     public static void ConfigureApplication(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddAutoMapper(Assembly.GetExecutingAssembly());
@@ -47,17 +54,23 @@ public static class DependencyInjection
             .AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
         services
+            .AddScoped<IUserAuthService, UserAuthService>()
             .AddScoped<IUserService, UserService>()
-            .AddScoped<ILockerService, LockerService>();
+            .AddScoped<ILockerService, LockerService>()
+            .AddScoped<ISessionService, SessionService>();
+
+        services.AddSession(o =>
+        {
+            o.Cookie.HttpOnly = true;
+            o.Cookie.IsEssential = true;
+        });
     }
 
 
     private static void RepositoryInjection(this IServiceCollection services)
     {
         services
-            .AddScoped<IUserRepository, UserRepository>();
-        
-        services
+            .AddScoped<IUserRepository, UserRepository>()
             .AddScoped<ILockerRepository, LockerRepository>();
     }
     

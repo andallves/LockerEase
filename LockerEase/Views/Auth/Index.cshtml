@@ -1,20 +1,52 @@
 ﻿@model LoginModel
 @{
-    ViewBag.Title = "title";
-    Layout = "_Layout";
+    ViewData["Title"] = "Login de Usuário";
 }
+<style>
+    input.form-control:focus {
+        box-shadow: 0 0 5px 2px green;
+        outline: none;
+    }
+    
+    h2.text-gray-800 {
+        color: #343a40;
+    }
+</style>
 
-<form asp-controller="Auth" asp-action="Enter" method="post">
-    <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Login</label>
-        <input type="text" asp-for="Login" class="form-control" id="login">
-        @Html.ValidationMessageFor(x => x.Login)
-        
+<div class="d-flex gap-5">
+    <div class="col-3 m-auto">
+        <div>
+            <h2 class="text-gray-800 fs-1 fw-2">Entrar</h2>
+        </div>
     </div>
-    <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">Password</label>
-        <input type="password" asp-for="Senha" class="form-control" id="exampleInputPassword1">
-        @Html.ValidationMessageFor(X => X.Senha)
-    <button type="submit" class="btn btn-primary">Submit</button>
+    
+    <div class="col-6 d-flex align-items-center py-4">
+        <form 
+            class="col-10 d-flex pb-4 flex-column align-items-center 
+        justify-content-center gap-2 bg-white needs-validation rounded-3 
+        shadow-lg py-2" 
+            novalidate
+              asp-controller="Auth" asp-action="Index" method="post">
+            <div class="col-10 border-bottom py-2 text-center">
+                <span class="fs-4 text-secondary">Acesse sua conta</span>
+            </div>
+            <div class="col-10">
+                <label for="firstname" class="form-label">Nome</label>
+                <input type="text" asp-for="Email" class="form-control"
+                       id="firstname" placeholder="Digite seu nome" required />
+                @Html.ValidationMessageFor(x => x.Email)
+            </div>
+            <div class="col-md-10">
+                <label for="password" class="form-label">Senha</label>
+                <input type="password" asp-for="Password" class="form-control"
+                       placeholder="********" id="password"
+                       required>
+                @Html.ValidationMessageFor(x => x.Password)
+            </div>
+    
+            <div class="col-10 d-grid my-3">
+                <button class="btn btn-outline-success" type="submit">Entrar</button>
+            </div>
+        </form>
     </div>
-</form>
+</div>

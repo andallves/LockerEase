@@ -44,27 +44,55 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                <ul class="navbar-nav justify-content-end flex-grow-1 gap-3">
-                    <li class="nav-item">
-                        <a class="nav-link @GetActiveClass("Home", "Index")"
-                           aria-current="page"
-                           asp-area=""
-                           asp-controller="Home"
-                           asp-action="Index">Página Inicial</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link @GetActiveClass("Auth", "Index")"
-                           asp-area=""
-                           asp-controller="Auth"
-                           asp-action="Index">Entrar</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link @GetActiveClass("User", "Register")"
-                           asp-area=""
-                           asp-controller="User"
-                           asp-action="Register">Cadastre-se</a>
-                    </li>
-                </ul>
+                @if (User.Identity != null && User.Identity.IsAuthenticated)
+                {
+                    <ul class="navbar-nav justify-content-end flex-grow-1 gap-3">
+                        <li class="nav-item">
+                            <a class="nav-link @GetActiveClass("Home", "Index")"
+                               aria-current="page"
+                               asp-area=""
+                               asp-controller="Home"
+                               asp-action="Index">Página Inicial</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link @GetActiveClass("Auth", "Index")"
+                               asp-area=""
+                               asp-controller="Locker"
+                               asp-action="Index">Procurar Armário</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link @GetActiveClass("User", "Register")"
+                               asp-area=""
+                               asp-controller="Auth"
+                               asp-action="Logout">Sair</a>
+                        </li>
+                    </ul>
+                }
+                else
+                {
+                    <ul class="navbar-nav justify-content-end flex-grow-1 gap-3">
+                        <li class="nav-item">
+                            <a class="nav-link @GetActiveClass("Home", "Index")"
+                               aria-current="page"
+                               asp-area=""
+                               asp-controller="Home"
+                               asp-action="Index">Página Inicial</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link @GetActiveClass("Auth", "Index")"
+                               asp-area=""
+                               asp-controller="Auth"
+                               asp-action="Index">Entrar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link @GetActiveClass("User", "Register")"
+                               asp-area=""
+                               asp-controller="User"
+                               asp-action="Register">Cadastre-se</a>
+                        </li>
+                    </ul>
+                }
+               
             </div>
         </div>
     </nav>
@@ -87,15 +115,17 @@
 </html>
 
 @functions {
+
     private string GetActiveClass(string controller, string action)
     {
         var routeData = HttpContextAccessor.HttpContext?.GetRouteData();
         var currentController = routeData?.Values["controller"]?.ToString();
         var currentAction = routeData?.Values["action"]?.ToString();
-        
+
         return controller.Equals(currentController, StringComparison.OrdinalIgnoreCase) &&
-        action.Equals(currentAction, StringComparison.OrdinalIgnoreCase)
-        ? "active"
-        : "text-light";
+               action.Equals(currentAction, StringComparison.OrdinalIgnoreCase)
+            ? "active"
+            : "text-light";
     }
+
 }

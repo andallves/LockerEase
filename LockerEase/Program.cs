@@ -2,6 +2,7 @@ using System.Globalization;
 using System.Reflection;
 using LockerEase.Repositories;
 using LockerEase.Services;
+using LockerEase.Settings;
 using Microsoft.AspNetCore.Localization;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -26,11 +27,19 @@ builder
 
 builder
     .Services
+    .SetupSettings(builder.Configuration);
+
+builder
+    .Services
     .ConfigureApplication(builder.Configuration);
 
 builder
     .Services
     .AddServices();
+
+builder
+    .Services
+    .AddAuthenticationConfig(builder.Configuration, builder.Environment);
 
 var app = builder.Build();
 
@@ -57,6 +66,9 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+app.UseAuthenticationConfig();
+
+app.UseSession();
 
 app.MapControllerRoute(
     name: "default",

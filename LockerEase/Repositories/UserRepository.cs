@@ -17,6 +17,11 @@ public class UserRepository : Repository<UserModel>, IUserRepository
 
     public async Task<UserModel?> GetUserById(int id)
     {
-       return await Context.Users.FirstOrDefaultAsync(u => u.Id == id);
+       return await Context.Users.AsNoTrackingWithIdentityResolution().FirstOrDefaultAsync(u => u.Id == id);
+    }
+
+    public async Task<UserModel?> GetUserByEmail(string email)
+    {
+        return await Context.Users.AsNoTrackingWithIdentityResolution().FirstOrDefaultAsync(u => u.Email == email);
     }
 }

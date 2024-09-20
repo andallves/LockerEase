@@ -1,4 +1,5 @@
 ﻿using LockerEase.Entities;
+using LockerEase.Models.Enums;
 
 namespace LockerEase.Models;
 
@@ -11,4 +12,5 @@ public class UserModel : Entity
     public string Password { get; set; } = String.Empty;
     public bool IsActive { get; set; } = true;
     public string? ProfilePictureUrl { get; set; } = null;
+    public UserRole Role { get; set; }
 }
